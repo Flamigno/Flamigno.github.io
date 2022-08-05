@@ -489,8 +489,7 @@
 Scanner sc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scnner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
 String a <span class="token operator">=</span> sc<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//这里是扫描器的使用，类似对象来输入，属于Scanner类</span>
 </code></pre>
-<p>首先是<strong>自动类型转换</strong>：类型小的自动转化给类型范围大的类型。</p>
-<p>e.g. byte a（1个字节8位）-&gt; int b(4个字节32位) &#x3D; a；</p>
+<h4 id="自动类型转换：类型小的自动转化给类型范围大的类型。"><a href="#自动类型转换：类型小的自动转化给类型范围大的类型。" class="headerlink" title="自动类型转换：类型小的自动转化给类型范围大的类型。"></a>自动类型转换：类型小的自动转化给类型范围大的类型。</h4><p>e.g. byte a（1个字节8位）-&gt; int b(4个字节32位) &#x3D; a；</p>
 <p><strong>自动转换类型顺序</strong>：byte —short—int—long—float—double。其中char —&gt; int</p>
 <p>表达式的最高类型拥有决定权。</p>
 <p><strong>小例题，经典例题：</strong></p>
@@ -510,8 +509,7 @@ c <span class="token operator">=</span>i<span class="token operator">+</span>a <
 <p><strong>但是1500的二进制就超过了8位了，所以转化位byte时就只截取后8位，转换过来就是-36。</strong></p>
 <p><strong>所以强制类型转换的俩大缺点：1，就是数据溢出或者丢失</strong></p>
 <p>​                                                       <strong>2，小数只保留整数部分返回。（小数类型—&gt;整数类型）</strong></p>
-<p>然后是<strong>运算符相关</strong></p>
-<p><strong>“+”</strong> 作为字符串的连接符，能算就进行计算，不能就进行连接以下是例题</p>
+<h4 id="运算符相关"><a href="#运算符相关" class="headerlink" title="运算符相关"></a>运算符相关</h4><p><strong>“+”</strong> 作为字符串的连接符，能算就进行计算，不能就进行连接以下是例题</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> a<span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
 <span class="token string">"abc"</span><span class="token operator">+</span><span class="token string">'a'</span><span class="token punctuation">;</span>
 <span class="token string">"abc"</span><span class="token operator">+</span> a<span class="token punctuation">;</span>
@@ -519,8 +517,7 @@ c <span class="token operator">=</span>i<span class="token operator">+</span>a <
 a <span class="token operator">+</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
 a <span class="token operator">+</span> <span class="token string">""</span> <span class="token operator">+</span> <span class="token string">'a'</span>
 </code></pre>
-<p><strong>自增与自减</strong></p>
-<p>这个也是老生常谈的问题了。自己创了一个口诀。</p>
+<h5 id="自增与自减"><a href="#自增与自减" class="headerlink" title="自增与自减"></a><strong>自增与自减</strong></h5><p>这个也是老生常谈的问题了。自己创了一个口诀。</p>
 <p><strong>对于++a：先增再用a，因为你既然++在前就只好先+再用咯；</strong></p>
 <p><strong>对于a++：先用a再使a增加，因为你既然a在前就只能先用了；</strong></p>
 <p>这里放一个例题吧：</p>
@@ -528,16 +525,13 @@ a <span class="token operator">+</span> <span class="token string">""</span> <sp
 <span class="token keyword">int</span> d<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> rs<span class="token operator">=</span>c<span class="token operator">++</span> <span class="token operator">+</span> <span class="token operator">++</span>c <span class="token operator">-</span> <span class="token operator">--</span>d <span class="token operator">-</span> <span class="token operator">++</span>d <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">+</span> c<span class="token operator">--</span><span class="token punctuation">;</span>
 </code></pre>
-<p><strong>赋值运算符</strong></p>
-<p>e.g.</p>
+<h5 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a><strong>赋值运算符</strong></h5><p>e.g.</p>
 <pre class=" language-java"><code class="language-java">a<span class="token operator">+=</span>b <span class="token operator">-</span><span class="token operator">></span> a<span class="token operator">=</span>a<span class="token operator">+</span>b <span class="token comment" spellcheck="true">//先加后赋值，其他类型的-=,%=都是一个原理</span>
 </code></pre>
-<p><strong>逻辑运算符</strong></p>
-<p>这个也是一个老生常谈的问题</p>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a><strong>逻辑运算符</strong></h5><p>这个也是一个老生常谈的问题</p>
 <pre class=" language-java"><code class="language-java"><span class="token operator">&amp;</span><span class="token punctuation">,</span><span class="token operator">|</span><span class="token punctuation">,</span><span class="token operator">!</span><span class="token punctuation">,</span><span class="token operator">^</span><span class="token comment" spellcheck="true">//最后一个是两个都是false或都为true那么结果就是false，反之为true</span>
 </code></pre>
-<p><strong>对于&amp;&amp;和||</strong></p>
-<p><strong>&amp;&amp;：当左边的为false时右边不执行。</strong></p>
+<h5 id="对于-amp-amp-和"><a href="#对于-amp-amp-和" class="headerlink" title="对于&amp;&amp;和||"></a><strong>对于&amp;&amp;和||</strong></h5><p><strong>&amp;&amp;：当左边的为false时右边不执行。</strong></p>
 <p><strong>||：当左边为true时右边不执行。</strong></p>
 <p><strong>三元运算符</strong></p>
 <p>这里就提一个嵌套算法</p>
@@ -548,10 +542,8 @@ a <span class="token operator">+</span> <span class="token string">""</span> <sp
 <pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> finmax<span class="token operator">=</span>a<span class="token operator">></span>b<span class="token operator">?</span><span class="token punctuation">(</span>a<span class="token operator">></span>c<span class="token operator">?</span>a<span class="token operator">:</span>c<span class="token punctuation">)</span><span class="token operator">:</span><span class="token punctuation">(</span>b<span class="token operator">></span>c<span class="token operator">?</span>c<span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true">//这里其实是从a，b，c中选出一个最大的，其中c作为中间变量，让a，和b，c同时相比。进而一步一步选出最大的那个。加了括号就很好理解了。</span>
 </code></pre>
-<p>接下来就是常用的<strong>程序结构</strong></p>
-<p>这里提一下各个结构的写法，至于实际应用，我们留到以后的项目实战。</p>
-<p><strong>if ,else,switch,for循环结构</strong></p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h4 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a><strong>程序结构</strong></h4><p>这里提一下各个结构的写法，至于实际应用，我们留到以后的项目实战。</p>
+<h5 id="if-else-switch-for循环结构"><a href="#if-else-switch-for循环结构" class="headerlink" title="if ,else,switch,for循环结构"></a><strong>if ,else,switch,for循环结构</strong></h5><pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token keyword">else</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">;</span>
@@ -582,15 +574,13 @@ a <span class="token operator">+</span> <span class="token string">""</span> <sp
 </code></pre>
 <p>这里提一个小知识：</p>
 <p><strong>for循环里定义的变量只能在循环中使用，但是while的可以用到循环之外。</strong></p>
-<p><strong>循环数包装类</strong></p>
-<p>循环类和Scanner类是一样的，都是定义对象来使用</p>
+<h5 id="循环数包装类"><a href="#循环数包装类" class="headerlink" title="循环数包装类"></a><strong>循环数包装类</strong></h5><p>循环类和Scanner类是一样的，都是定义对象来使用</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Randoml<span class="token punctuation">;</span>
 Random r <span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">int</span> numb<span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">99</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//注意是左闭右开</span>
 </code></pre>
 <p>这里提一个当时学习时经常考到的生成随机验证码的算法</p>
-<p><strong>生成任意位数验证码（包括大小写字母和数字）</strong></p>
-<p>第一种方法：</p>
+<h5 id="生成任意位数验证码（包括大小写字母和数字）"><a href="#生成任意位数验证码（包括大小写字母和数字）" class="headerlink" title="生成任意位数验证码（包括大小写字母和数字）"></a><strong>生成任意位数验证码（包括大小写字母和数字）</strong></h5><p>第一种方法：</p>
 <pre class=" language-java"><code class="language-java">        String abs<span class="token operator">=</span><span class="token string">"1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"</span><span class="token punctuation">;</span>
         String code<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//一定要初始化字符串</span>
         Scanner sc<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
