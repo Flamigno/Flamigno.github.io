@@ -959,6 +959,75 @@ a<span class="token operator">=</span><span class="token string">"abcd"</span><s
 
 <p>这样子编译器就会自动组合使得s4&#x3D;”abc”也就放在了常量池中，s4和s1的地址就相等了。</p>
 <p>因为s2在编译阶段是不确定的，所以s3的那种方式是不会放在常量池中的。</p>
+<h5 id="String常用API"><a href="#String常用API" class="headerlink" title="String常用API"></a>String常用API</h5><p>首先就是equals（）</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> name1<span class="token operator">=</span><span class="token string">"123"</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> name2<span class="token operator">=</span><span class="token string">"123"</span><span class="token punctuation">;</span>
+name1<span class="token operator">==</span>name2<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>像上述这样子的比较的话，只是简单的比较地址，并不是比较其中的内容</p>
+<p>所以我们要用equals来比较。当然还有一个不顾大小写的函数叫equalsIgnoreCase()</p>
+<p><strong>但是要注意之前提到过的，用equals函数的时候要注意内容是否为null，不然会有很多的bug的</strong></p>
+<p>接下来就是常用API了</p>
+<p><strong>string.length()   获取字符串的长度</strong><br><strong>string.charAt(n)    获取字符串中某一下标位置的字符</strong></p>
+<p>第一个还是比较常见的</p>
+<p><strong>第二个就可以用于取一串固定的字符串然后根据随机数来取任意字符，就是验证码的思路，也就是很方便的，当然返回类型是char，并且index的范围还是像往常一样，【0，length-1】</strong></p>
+<p>接下来就是三个不常用的小功能</p>
+<p>string.trim()   去掉字符串开头结尾的空格<br>string.toUpperCase()   将小写字母转换为大写字母<br>string.toLowerCase()   将大写字母转换为小写字母</p>
+<p>然后就是判断位置的几个函数</p>
+<p>string.endsWith(“”)   判断结尾是否存在<br>string.startsWith(“”)  判断开头是否存在<br>string.startsWith(“”,n)  判断开头偏移n个位置是否存在<br>string.indexOf(“”)      判断存在的位置<br>string.lastIndexOf(“”)   从结尾判断存在的位置</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> str3 <span class="token operator">=</span> <span class="token string">"flower.pdf.pdf"</span><span class="token punctuation">;</span>
+       <span class="token comment">//2.判断结尾是否存在pdf</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"endsWith："</span><span class="token operator">+</span>str3<span class="token punctuation">.</span><span class="token function">endsWith</span><span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//3.判断开头是否存在pdf</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"startsWith："</span><span class="token operator">+</span>str3<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"flower"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//4.判断开头偏移5个位置后是否存在pdf</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"str3.startsWith(\"flower\", 5)："</span><span class="token operator">+</span>str3<span class="token punctuation">.</span><span class="token function">startsWith</span><span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//5.判断存在pdf 的位置</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"indexOf："</span><span class="token operator">+</span>str3<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+       <span class="token comment">//6.判断结尾是否存在pdf的位置</span>
+       <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"lastIndexOf："</span><span class="token operator">+</span>str3<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"pdf"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>这里就是提一下返回值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/4.png" alt="运行结果"></p>
+<p>就是boolean属性和int类型，然后重点在于这个第三个函数的写法，就是prefix – 前缀。</p>
+<p>toffset – 字符串中开始查找的位置</p>
+<p><strong>那么也就是说这里的str3.startsWith(“pdf”, 7)的意思是从第七个index查找找到pdf，并且他是严格位置的，就是必须从index的7位置开始就是pdf了，而不是说我从5开始找也能找到pdf，不是的，是严格接着的，我在index为7的位置就能看到pdf</strong></p>
+<p>然后就是字符串返回字符数组的函数</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">char</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> chars<span class="token operator">=</span>name<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>还有一个截取字符串的函数</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> rs<span class="token operator">=</span>name<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>也是index作为引导，然后区间为【）左闭右开。当然如果不标明结尾index就默认直接截取到末尾了</p>
+<p>还有一个replace的函数，替换字符串中特定的片段</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> rs<span class="token operator">=</span>name<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">"123"</span><span class="token punctuation">,</span><span class="token string">"!!!!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>格式也就是target和replacement</p>
+<p>再介绍一个contains函数，返回的是boolean类型</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">rs<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>最后系统介绍String类型的转换吧。</p>
+<h5 id="String类型的转换"><a href="#String类型的转换" class="headerlink" title="String类型的转换"></a>String类型的转换</h5><p>String转char</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s<span class="token operator">=</span><span class="token string">"哈哈hah"</span><span class="token punctuation">;</span>
+<span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> c<span class="token operator">=</span>s<span class="token punctuation">.</span><span class="token function">toCharArray</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>String转byte</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s<span class="token operator">=</span><span class="token string">"哈哈啦啦Ahah"</span><span class="token punctuation">;</span>
+<span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span>b<span class="token operator">=</span>s<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>String转int</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">String</span> s<span class="token operator">=</span><span class="token string">"1010101"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token class-name">String</span> s<span class="token operator">=</span><span class="token string">"1010101"</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//先把二进制转换为十进制然后再转换为int类型，这个2就是说明参数的进制类型</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么转double类型也一样：Double.parseDouble（）</p>
+<p>String转Boolean</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token function">parseBoolean</span><span class="token punctuation">(</span><span class="token string">"True"</span><span class="token punctuation">)</span> <span class="token comment">//返回 true。</span>
+<span class="token class-name">Boolean</span><span class="token punctuation">.</span><span class="token function">parseBoolean</span><span class="token punctuation">(</span><span class="token string">"yes"</span><span class="token punctuation">)</span> <span class="token comment">//返回 false。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 
                 
             </div>
