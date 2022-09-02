@@ -480,7 +480,7 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="导语"><a href="#导语" class="headerlink" title="导语"></a>导语</h3><p> 从今年的6月15号开始到现在7月30号，零零碎碎的学习了一些Java的基础语法知识。但是编程这项工作啊，或者说这项技能，我一直还是觉得学习了过后不去天天使用还是很快就忘了，记忆这种事情真的就如《刻意练习》里说的那样，你得在你想用的时候想起来用对的，才会一辈子记住的，记忆的诀窍也就在这里了。所以这几天就把Java想复习用的都过一遍，最好是自己去想去操作，把这门语言记住吧。</p>
-<img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/IMG_17.jpg" alt="最近很喜欢的一张图" width="500" height="600">
+<img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/IMG_17.png" alt="最近很喜欢的一张图" style="zoom:25%;">
 
 <h3 id="Java基础语法部分"><a href="#Java基础语法部分" class="headerlink" title="Java基础语法部分"></a>Java基础语法部分</h3><p> 对于Java这门语言，其实今年2月份的时候就稍微开了个头，最简单也是最直击我的就是拿个快捷输入：psvm和sout。</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span><span class="token punctuation">&#123;</span><span class="token comment">//这里就可以用psvm使用也就是主程序模块</span>
@@ -632,7 +632,7 @@ a <span class="token operator">+</span> <span class="token string">""</span> <sp
 
 <p>既然这里提到这个内容，有办法是可以解决输出的是内容而不是地址的。</p>
 <h5 id="解决对象输出内容"><a href="#解决对象输出内容" class="headerlink" title="解决对象输出内容"></a>解决对象输出内容</h5><p>我们在定义类的过程中，如果是直接sout对象的话，也会是地址的如图</p>
-<p><img src="https://raw.githubusercontent.com/Flamigno/Image/master/images/QQ%E5%9B%BE%E7%89%8720220805203824.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/QQ%E5%9B%BE%E7%89%8720220805203824.png"></p>
 <p>这和数组的直接输出地址是一个道理，<strong>所以我们可以在类中重写toSrting方法</strong>，让其输出对象中的具体内容</p>
 <pre class="line-numbers language-java" data-language="java"><code class="language-java"><span class="token annotation punctuation">@Override</span>
     <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -643,7 +643,7 @@ a <span class="token operator">+</span> <span class="token string">""</span> <sp
                 <span class="token char">'&#125;'</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/QQ%E5%9B%BE%E7%89%8720220805204226.png" alt="**如图，这样就完成了内容输出**"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/QQ%E5%9B%BE%E7%89%8720220805204226.png" alt="如图，这样就完成了内容输出"></p>
 <h5 id="数组的默认值规则"><a href="#数组的默认值规则" class="headerlink" title="数组的默认值规则"></a>数组的默认值规则</h5><p>byte short int char long ：0</p>
 <p>float doubt…. ：0.0</p>
 <p>boolean : false</p>
@@ -760,7 +760,7 @@ temp <span class="token operator">=</span> a<span class="token punctuation">[</s
         statictest <span class="token class-name">A</span> <span class="token operator">=</span><span class="token keyword">new</span> <span class="token function">statictest</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://raw.githubusercontent.com/Flamigno/Image/master/images/QQ%E5%9B%BE%E7%89%8720220807161640.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/Flamigno/Image/images/QQ%E5%9B%BE%E7%89%8720220807161640.png"></p>
 <p><strong>通过输出结果，我们可以看到，程序运行时静态初始化块最先被执行，然后执行普通初始化块，最后才执行构造方法。并且由于静态初始化块只在类加载时执行一次，所以当再次创建对象时是不会调用静态初始化的。</strong></p>
 <p><strong>类是在第一次使用的时候才加载，加载之后就不会移除</strong></p>
 <h5 id="静态的优缺点"><a href="#静态的优缺点" class="headerlink" title="静态的优缺点"></a>静态的优缺点</h5><p><strong>优点:</strong></p>
