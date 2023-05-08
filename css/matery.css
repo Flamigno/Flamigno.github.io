@@ -1824,7 +1824,7 @@ thead {
 
 .my-gallery .photo img {
      /*width: 100%;*/
-    height: 200px;/*限制高度，使同行保持等高，不然会很乱*/
+    height: 180px;/*限制高度，使同行保持等高，不然会很乱*/
     border-radius: 10px;
     cursor: pointer;
 /*height: 200px;
