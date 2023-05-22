@@ -578,6 +578,19 @@ header .go-back i {
     line-height: 1.2em;
     margin-bottom: 20px;
     position: relative;
+    background: linear-gradient(90deg, rgb(204, 153, 255), rgb(0, 0, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Arial, sans-serif; /* 修改字体样式，可以根据需要更换其他字体 */
+    font-weight: normal; /* 修改字体粗细，改为normal以减小粗细 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强字体的可读性 */
+    background-image: linear-gradient(45deg, #ff00ff, #ff00aa, #aa00ff); /* 使用鲜艳渐变色作为字体颜色 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+   
+
 }
 
 .bg-cover .description {
@@ -591,6 +604,7 @@ header .go-back i {
     margin: 0 auto;
     font-size: 2.5rem;
     font-weight: 400;
+    color: #FF353C;
 }
 
 /*@-webkit-keyframes rainbow {
@@ -703,6 +717,7 @@ header .go-back i {
 .dream .title,
 .music-player .title,
 .video-player .title {
+    color: #7F95D1;
     margin-bottom: 20px;
     font-size: 2rem;
     font-weight: 700;
