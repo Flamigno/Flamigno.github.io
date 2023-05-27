@@ -582,14 +582,12 @@ header .go-back i {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: Arial, sans-serif; /* 修改字体样式，可以根据需要更换其他字体 */
-    font-weight: normal; /* 修改字体粗细，改为normal以减小粗细 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字阴影，增强字体的可读性 */
-    background-image: linear-gradient(45deg, #ff00ff, #ff00aa, #aa00ff); /* 使用鲜艳渐变色作为字体颜色 */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background-image: linear-gradient(45deg, #FF00FF, #FF1493); /* 修改为更鲜艳的颜色渐变方案 */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-   
 
 }
 
@@ -911,13 +909,17 @@ article .card-image {
 }
 
 article .card-image img {
-    height: 220px;
-    border-radius: 0.3rem;
-    opacity: .7;
+    width: 100%; /* 调整图片宽度，可以根据需要设置具体数值或百分比 */
+    height: auto; /* 自适应高度，保持图片宽高比 */
+    border-radius: 0.5rem; /* 调整边框的圆角度数，可以根据需要设置具体数值 */
+    opacity: 0.9; 
 }
 
 article .tag-image img {
-    height: 220px;
+    width: 100%; /* 调整图片宽度，可以根据需要设置具体数值或百分比 */
+    height: auto; /* 自适应高度，保持图片宽高比 */
+    border-radius: 0.5rem; /* 调整边框的圆角度数，可以根据需要设置具体数值 */
+    opacity: 0.9; 
 }
 
 article .card .card-content {
