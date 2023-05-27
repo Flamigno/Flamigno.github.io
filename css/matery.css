@@ -597,7 +597,7 @@ header .go-back i {
     font-size: 1.5rem; /* 调整字体大小，可以根据需要设置具体数值 */
     line-height: 1.4em;
     position: relative;
-    top: -150px;
+    top: -10px;
     background: linear-gradient(90deg, rgb(204, 153, 255), rgb(0, 0, 0));
     background-clip: text;
     -webkit-background-clip: text;
