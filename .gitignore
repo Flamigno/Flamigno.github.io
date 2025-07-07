@@ -1,0 +1,14 @@
+# Hexo
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+
+# System Files
+.DS_Store
+Thumbs.db
+
+_multiconfig.yml

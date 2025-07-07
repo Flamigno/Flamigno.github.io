@@ -1,0 +1,35 @@
+{
+  "name": "hexo-site",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "npm run sync && hexo generate",
+    "clean": "hexo clean",
+    "deploy": "npm run build && hexo deploy",
+    "server": "hexo server",
+    "sync": "node ./scripts/sync-from-strapi.js"
+  },
+  "hexo": {
+    "version": "6.2.0"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "hexo": "^6.2.0",
+    "hexo-asset-image": "^1.0.0",
+    "hexo-deployer-git": "^3.0.0",
+    "hexo-generator-archive": "^1.0.0",
+    "hexo-generator-category": "^1.0.0",
+    "hexo-generator-index": "^2.0.0",
+    "hexo-generator-tag": "^1.0.0",
+    "hexo-helper-live2d": "^3.1.1",
+    "hexo-renderer-ejs": "^2.0.0",
+    "hexo-renderer-marked": "^5.0.0",
+    "hexo-renderer-stylus": "^2.1.0",
+    "hexo-server": "^3.0.0",
+    "hexo-theme-landscape": "^0.0.3",
+    "hexo-theme-nexmoe": "^4.0.1",
+    "live2d-widget-model-miku": "^1.0.5",
+    "pinyin": "^4.0.0",
+    "slugify": "^1.6.6"
+  }
+}

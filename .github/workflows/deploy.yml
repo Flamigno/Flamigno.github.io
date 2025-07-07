@@ -1,0 +1,35 @@
+name: Deploy Hexo to GitHub Pages on Strapi Publish
+
+on:
+  repository_dispatch:
+    types: [strapi_publish]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # 使用一个稳定的LTS版本
+
+      - name: Install dependencies
+        working-directory: ./Blog # 指定工作目录
+        run: npm install
+
+      - name: Sync from Strapi and Build
+        working-directory: ./Blog # 指定工作目录
+        env:
+          STRAPI_API_URL: ${{ secrets.STRAPI_API_URL }} # 从 secrets 中读取 Strapi URL
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./Blog/public # 指定要发布的目录
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com' 
